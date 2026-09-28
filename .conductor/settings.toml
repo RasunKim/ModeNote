@@ -1,0 +1,12 @@
+"$schema" = "https://conductor.build/schemas/settings.repo.schema.json"
+
+[scripts]
+setup = "cd apps/mobile && npm install"
+run_mode = "concurrent"
+
+# Run 버튼: Expo 개발 서버를 켜고 iOS 시뮬레이터에 앱을 띄운다. 코드를 저장하면 바로 반영된다.
+[scripts.run.ios]
+available_in = [ "local" ]
+command = "cd apps/mobile && open -a Simulator && npx expo start --ios --port $CONDUCTOR_PORT"
+default = true
+icon = "smartphone"
